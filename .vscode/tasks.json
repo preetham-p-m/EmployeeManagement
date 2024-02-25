@@ -1,0 +1,33 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dotnet",
+			"task": "clean",
+			"group": "clean",
+			"problemMatcher": [],
+			"label": "clean"
+		},
+		{
+			"type": "dotnet",
+			"task": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "build"
+		},
+		{
+			"type": "dotnet",
+			"task": "run",
+			"group": "run",
+			"problemMatcher": [],
+			"label": "run"
+		},
+		{
+			"type": "dotnet",
+			"task": "watch",
+			"group": "watch",
+			"problemMatcher": [],
+			"label": "watch"
+		},
+	]
+}
