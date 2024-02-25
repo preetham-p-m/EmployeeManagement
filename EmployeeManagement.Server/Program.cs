@@ -22,6 +22,22 @@ builder
         );
     });
 
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(
+        "CorsPolicy",
+        policy =>
+        {
+            // white-listing UI application
+            policy
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                .WithOrigins("https://localhost:5173");
+        }
+    );
+});
+
 var app = builder.Build();
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -57,5 +73,6 @@ catch (System.Exception)
     logger.LogError("Error during Migration");
     throw;
 }
+app.UseCors("CorsPolicy");
 
 app.Run();
