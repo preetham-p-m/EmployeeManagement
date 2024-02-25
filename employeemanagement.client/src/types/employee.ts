@@ -5,3 +5,8 @@ export interface Employee {
   employeeNumber: number;
   status: number;
 }
+
+export interface ValidationResult {
+  isValid: boolean;
+  errors: { errorMessage: string; }[];
+}
