@@ -55,7 +55,14 @@ public class EmployeeService : IEmployeeService
 
     public async Task<Employee> GetEmployeeById(Guid id)
     {
-        return await this.dataContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+        var employee = await this.dataContext.Employees.FirstOrDefaultAsync(x => x.Id == id);
+
+        if (employee == null)
+        {
+            throw new BadHttpRequestException("Employee not found");
+        }
+
+        return employee;
     }
 
     public async Task<object> EditEmployee(Guid id, EmployeeDto employeeDto)
@@ -75,6 +82,7 @@ public class EmployeeService : IEmployeeService
             return new ValidationResult(validationResult.Errors);
         }
 
+        employee.Name = employeeDto.Name;
         employee.DateOfBirth = employeeDto.DateOfBirth;
 
         await this.dataContext.SaveChangesAsync();
