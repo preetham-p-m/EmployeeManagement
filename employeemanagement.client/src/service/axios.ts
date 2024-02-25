@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-axios.defaults.baseURL = "https://localhost:7117/";
+axios.defaults.baseURL = "https://localhost:5001/";
 
 const responseBody = <T>(respose: AxiosResponse<T>) => respose.data;
 
