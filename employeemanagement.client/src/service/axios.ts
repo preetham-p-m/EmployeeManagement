@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 
-axios.defaults.baseURL = "https://localhost:5001/";
+axios.defaults.baseURL = import.meta.env.VITE_REACT_APP_API_URL
 
 const responseBody = <T>(respose: AxiosResponse<T>) => respose.data;
 
