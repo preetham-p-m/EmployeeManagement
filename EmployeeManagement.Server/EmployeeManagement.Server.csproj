@@ -21,9 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\employeemanagement.client\employeemanagement.client.esproj">
+    <!-- <ProjectReference Include="..\employeemanagement.client\employeemanagement.client.esproj">
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
+    </ProjectReference> -->
     <ProjectReference Include="..\EmployeeManagement.Service\EmployeeManagement.Service.csproj" />
   </ItemGroup>
 
